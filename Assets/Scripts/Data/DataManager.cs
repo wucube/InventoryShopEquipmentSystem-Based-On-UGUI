@@ -25,6 +25,8 @@ public class DataManager : BaseManager<DataManager>
         //加载Resources文件夹下的Json文件
         string info = ResMgr.Instance().Load<TextAsset>("Json/ItemInfo").text;
 
+        //Debug.Log(PlayerInfo_Url);
+
         //根据Json文件内容解析成对应的数据结构
         Items items = JsonUtility.FromJson<Items>(info);
         for(int i = 0; i < items.info.Count; i++)
@@ -94,8 +96,8 @@ public class Player
         money = 99999;
         gem = 0;
         pro = 99;
-        items = new List<ItemInfo>() { new ItemInfo() { id = 1, num = 1 } };
-        equips = new List<ItemInfo>() { new ItemInfo() { id = 3, num = 10 } };
+        items = new List<ItemInfo>() { new ItemInfo() { id = 3, num = 99 } };
+        equips = new List<ItemInfo>() { new ItemInfo() { id = 1, num = 1 },new ItemInfo() { id = 2, num = 1 } };
         gems = new List<ItemInfo>();
     }
 }
@@ -105,7 +107,9 @@ public class Player
 /// </summary>
 public class ItemInfo
 {
+    //道具装备ID
     public int id;
+    //数量
     public int num;
 }
 
