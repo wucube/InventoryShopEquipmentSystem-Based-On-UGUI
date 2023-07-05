@@ -82,10 +82,10 @@ public class PoolMgr : BaseManager<PoolMgr>
         else
         {
             //通过异步加载资源 创建对象给外部用
-            ResMgr.Instance().LoadAsync<GameObject>(name, (o) =>
+            ResMgr.Instance().LoadAsync<GameObject>(name, (obj) =>
             {
-                o.name = name;
-                callBack(o);
+                obj.name = name;
+                callBack(obj);
             });
 
             //obj = GameObject.Instantiate(Resources.Load<GameObject>(name));
