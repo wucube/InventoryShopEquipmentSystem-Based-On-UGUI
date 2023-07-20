@@ -13,6 +13,12 @@ public class MainPanel : BasePanel
         {
             UIManager.Instance().ShowPanel<BagPanel>("BagPanel");
         });
+
+        //监听商店按钮事件，点击后打开商店面板
+        GetControl<Button>("btnShop").onClick.AddListener(() =>
+        {
+            UIManager.Instance().ShowPanel<ShopPanel>("ShopPanel");
+        });
     }
 
     public override void ShowMe()

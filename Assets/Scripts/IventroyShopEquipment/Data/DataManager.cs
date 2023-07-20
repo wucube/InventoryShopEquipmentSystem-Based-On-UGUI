@@ -13,6 +13,11 @@ public class DataManager : BaseManager<DataManager>
     private Dictionary<int, Item> itemInfos = new Dictionary<int, Item>();
 
     /// <summary>
+    /// 商店道具信息
+    /// </summary>
+    public List<ShopCellInfo> shopInfos = new List<ShopCellInfo>();
+
+    /// <summary>
     /// 玩家的信息数据
     /// </summary>
     public Player playerInfo;
@@ -53,6 +58,15 @@ public class DataManager : BaseManager<DataManager>
             playerInfo = new Player();
             SavePlayerInfo();
         }
+
+        //加载商店的Json文件
+        string shopInfo = ResMgr.Instance().Load<TextAsset>("Json/ShopInfo").text;
+        Debug.Log(shopInfo);
+        Shops shopsInfo = JsonUtility.FromJson<Shops>(shopInfo);
+        Debug.Log(shopsInfo.info.Count);
+        //记录 加载解析出的商店信息
+        shopInfos = shopsInfo.info;
+       
     }
     /// <summary>
     /// 存储玩家道具信息
@@ -138,6 +152,7 @@ public class Player
 /// <summary>
 /// 玩家拥有的道具基础信息
 /// </summary>
+[System.Serializable]
 public class ItemInfo
 {
     //道具基础信息的ID，对应 Item 类中的 id 
@@ -165,5 +180,26 @@ public class Item
     public string icon;
     public int type;
     public int prices;
+    public string tips;
+}
+
+/// <summary>
+/// 商店售卖的所有道具信息，同时作为读取Json的中间数据结构
+/// </summary>
+public class Shops
+{
+    public List<ShopCellInfo> info;
+}
+
+/// <summary>
+/// 商店售卖物品信息的数据
+/// </summary>
+[System.Serializable]
+public class ShopCellInfo 
+{
+    public int id;
+    public ItemInfo itemInfo;
+    public int priceType;
+    public int price;
     public string tips;
 }

@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 /// <summary>
@@ -86,9 +83,6 @@ public class RecycleScrollView<T,K> where K:IItemInit<T>
     {
         this.items = items;
         content.sizeDelta = new Vector2(0, Mathf.CeilToInt(items.Count / col) * itemW);
-
-        //视图列表有切换页签功能时，要清除缓存池上次缓存的对象
-        //PoolMgr.Instance().Clear();
     }
 
     /// <summary>

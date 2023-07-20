@@ -1,0 +1,39 @@
+{
+	"info":[{
+		"id": 1,
+		"itemInfo": {
+			"id": 3,
+			"num": 10
+		},
+		"priceType": 1,
+		"price": 100,
+		"tips": "一组加血红药，便宜又实惠"
+	}, {
+		"id": 2,
+		"itemInfo": {
+			"id": 4,
+			"num": 10
+		},
+		"priceType": 1,
+		"price": 100,
+		"tips": "一组加魔蓝药，便宜又实惠"
+	}, {
+		"id": 3,
+		"itemInfo": {
+			"id": 5,
+			"num": 99
+		},
+		"priceType": 2,
+		"price": 999,
+		"tips": "宝石组，用来强化武器，便宜又实惠"
+	}, {
+		"id": 4,
+		"itemInfo": {
+			"id": 6,
+			"num": 99
+		},
+		"priceType": 2,
+		"price": 999,
+		"tips": "宝石组，用来强化防具，便宜又实惠"
+	}]
+}
