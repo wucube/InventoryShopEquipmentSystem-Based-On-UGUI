@@ -12,11 +12,11 @@ public class TipsPanel : BasePanel
     public void InitInfo(ItemInfo info)
     {
         //根据道具信息数量，更新格子对象
-        Item itemData = DataManager.Instance().GetItemInfo(info.id);
+        Item itemData = DataManager.Instance.GetItemInfo(info.id);
 
         //通过道具ID得到道具表中的数据信息，加载对应的道具信息
         //图标
-        GetControl<Image>("imgIcon").sprite = ResMgr.Instance().Load<Sprite>("Icon/" + itemData.icon);
+        GetControl<Image>("imgIcon").sprite = ResMgr.Instance.Load<Sprite>("Icon/" + itemData.icon);
         //数量
         GetControl<Text>("txtNum").text = "数量:" + info.num.ToString();
         //名字

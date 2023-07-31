@@ -132,7 +132,7 @@ public class RecycleScrollView<T,K> where K:IItemInit<T>
                 if (nowShowItems.ContainsKey(i))
                 {
                     if (nowShowItems[i] != null)
-                        PoolMgr.Instance().PushObj(itemResName, nowShowItems[i]);
+                        PoolMgr.Instance.PushObj(itemResName, nowShowItems[i]);
 
                     nowShowItems.Remove(i);
                 }
@@ -143,7 +143,7 @@ public class RecycleScrollView<T,K> where K:IItemInit<T>
                 if (nowShowItems.ContainsKey(i))
                 {
                     if (nowShowItems[i] != null)
-                        PoolMgr.Instance().PushObj(itemResName, nowShowItems[i]);
+                        PoolMgr.Instance.PushObj(itemResName, nowShowItems[i]);
 
                     nowShowItems.Remove(i);
                 }
@@ -166,7 +166,7 @@ public class RecycleScrollView<T,K> where K:IItemInit<T>
                 //先添加索引与空对象
                 nowShowItems.Add(index, null);
 
-                PoolMgr.Instance().GetObj(itemResName, (obj) =>
+                PoolMgr.Instance.GetObj(itemResName, (obj) =>
                 {
                     //格创建后要做的事情
 
@@ -184,7 +184,7 @@ public class RecycleScrollView<T,K> where K:IItemInit<T>
                     if (nowShowItems.ContainsKey(index))
                         nowShowItems[index] = obj;
                     else
-                        PoolMgr.Instance().PushObj(itemResName, obj);
+                        PoolMgr.Instance.PushObj(itemResName, obj);
                 });
             }
 
@@ -207,7 +207,7 @@ public class RecycleScrollView<T,K> where K:IItemInit<T>
         {
             int index = i;
 
-            PoolMgr.Instance().GetObj(itemResName, (obj) =>
+            PoolMgr.Instance.GetObj(itemResName, (obj) =>
             {
                 //格创建后要做的事情
 

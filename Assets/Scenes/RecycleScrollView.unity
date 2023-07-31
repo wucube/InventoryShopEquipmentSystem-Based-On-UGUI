@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 805295741}
   - component: {fileID: 805295742}
   m_Layer: 0
-  m_Name: Main01
+  m_Name: Main_RSV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

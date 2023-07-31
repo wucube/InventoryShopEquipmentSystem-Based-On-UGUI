@@ -40,7 +40,7 @@ public class ItemCell : BasePanel, IItemInit<ItemInfo>
     private void EnterItemCell(BaseEventData data)
     {
         //显示提示面板
-        UIManager.Instance().ShowPanel<TipsPanel>("TipsPanel", E_UI_Layer.Top, (panel) =>
+        UIManager.Instance.ShowPanel<TipsPanel>("TipsPanel", E_UI_Layer.Top, (panel) =>
         {
             //面板异步加载完成后，更新信息
             panel.InitInfo(itemInfo);
@@ -54,16 +54,16 @@ public class ItemCell : BasePanel, IItemInit<ItemInfo>
     /// <param name="data"></param>
     private void ExitItemCell(BaseEventData data)
     {
-        UIManager.Instance().HidePanel("TipsPanel");
+        UIManager.Instance.HidePanel("TipsPanel");
     }
 
     public void InitInfo(ItemInfo info)
     {
         itemInfo = info;
         //根据道具信息的数据，更新格子对象
-        Item itemData = DataManager.Instance().GetItemInfo(info.id);
+        Item itemData = DataManager.Instance.GetItemInfo(info.id);
         //加载图标
-        GetControl<Image>("imgIcon").sprite = ResMgr.Instance().Load<Sprite>("Icon/" + itemData.icon);
+        GetControl<Image>("imgIcon").sprite = ResMgr.Instance.Load<Sprite>("Icon/" + itemData.icon);
         //更新数量
         GetControl<Text>("txtNum").text = info.num.ToString();
     }
